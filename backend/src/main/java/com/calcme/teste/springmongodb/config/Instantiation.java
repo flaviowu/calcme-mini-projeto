@@ -20,7 +20,7 @@ public class Instantiation implements CommandLineRunner {
         customerRepository.deleteAll();
 
         Customer obi = new Customer(null, "Obi Wan Kenoby", "21976896700", "obi@tatooine.com");
-        Customer luke = new Customer(null, "Luke Skywalker", "21900992211", "luke@tatooine.com");
+        Customer luke = new Customer(null, "Luke Skywalker", "21900992211", "luke@rebelalliance.com");
         Customer han = new Customer(null, "Han Solo", "21976896703", "solohan@milleniumfalcon.com");
 
         customerRepository.saveAll(Arrays.asList(obi, luke, han));

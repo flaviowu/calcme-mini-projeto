@@ -45,4 +45,12 @@ public class CustomerResource {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Void> update(@RequestBody CustomerDTO objDto, @PathVariable String id) {
+        Customer obj = service.fromDTO(objDto);
+        obj.setId(id);
+        obj = service.update(obj);
+        return ResponseEntity.noContent().build();
+    }
 }
