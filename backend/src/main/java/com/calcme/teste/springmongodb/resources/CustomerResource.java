@@ -1,4 +1,4 @@
-package com.calcme.teste.springmongodb.resource;
+package com.calcme.teste.springmongodb.resources;
 
 import com.calcme.teste.springmongodb.domain.Customer;
 import com.calcme.teste.springmongodb.dto.CustomerDTO;
@@ -6,6 +6,7 @@ import com.calcme.teste.springmongodb.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +25,11 @@ public class CustomerResource {
         List<Customer> list = service.findAll();
         List<CustomerDTO> listDto = list.stream().map( x -> new CustomerDTO(x)).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDto);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<CustomerDTO> findById(@PathVariable String id) {
+        Customer obj = service.findById(id);
+        return ResponseEntity.ok().body(new CustomerDTO(obj));
     }
 }

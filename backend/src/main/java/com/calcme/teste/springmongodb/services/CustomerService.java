@@ -2,10 +2,12 @@ package com.calcme.teste.springmongodb.services;
 
 import com.calcme.teste.springmongodb.domain.Customer;
 import com.calcme.teste.springmongodb.repository.CustomerRepository;
+import com.calcme.teste.springmongodb.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CustomerService {
@@ -14,7 +16,13 @@ public class CustomerService {
     private CustomerRepository repo;
 
     public List<Customer> findAll(){
+
         return repo.findAll();
+    }
+
+    public Customer findById(String id) {
+        Optional<Customer> obj = repo.findById(id);
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não Encontrado"));
     }
 
 }
