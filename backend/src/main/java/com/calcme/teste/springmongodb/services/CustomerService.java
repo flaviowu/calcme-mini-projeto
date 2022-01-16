@@ -30,6 +30,10 @@ public class CustomerService {
         return repo.insert(obj);
     }
 
+    public void delete(String id) {
+        repo.deleteById(id);
+    }
+
     public Customer fromDTO(CustomerDTO objDto) {
         return new Customer(objDto.getId(), objDto.getName(), objDto.getPhoneNumber(), objDto.getEmail() );
     }
