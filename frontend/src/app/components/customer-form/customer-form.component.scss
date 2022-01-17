@@ -1,0 +1,23 @@
+.form__container {
+    display: flex;
+    align-content: center;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.form__item {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+input {
+    background-color: #e9e9e9;
+    height: 2.5rem;
+    border-radius: 5px;
+    text-align: center;
+}

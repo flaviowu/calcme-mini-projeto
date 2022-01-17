@@ -1,0 +1,52 @@
+<section>
+  <div class="form__container">
+    <form class="form__group">
+      <div class="form__item">
+        <label for="name"
+          >Nome:
+          <input
+            type="text"
+            placeholder="Digite seu nome"
+            name="name"
+            [(ngModel)]="payload.name"
+        /></label>
+      </div>
+      <div class="form__item">
+        <label for="email"
+          >Email:
+          <input
+            type="email"
+            name="email"
+            placeholder="Digite seu e-mail"
+            [(ngModel)]="payload.email"
+        /></label>
+      </div>
+      <div class="form__item">
+        <label for="phoneNumber"
+          >Telefone:<input
+            type="text"
+            name="phoneNumber"
+            placeholder="Digite seu telefone"
+            [(ngModel)]="payload.phoneNumber"
+        /></label>
+      </div>
+      <div class="form__item">
+        <button
+          class="form__btn-send"
+          type="button"
+          (click)="handleCreateUser()"
+        >
+          Enviar
+        </button>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Fill form field</mat-label>
+            <input matInput placeholder="Placeholder" />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+      </div>
+    </form>
+  </div>
+</section>

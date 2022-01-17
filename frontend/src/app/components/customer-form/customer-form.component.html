@@ -1,0 +1,40 @@
+<section>
+  <div class="form__container">
+    <mat-card>
+      <mat-card-title>Dados do Cliente</mat-card-title>
+      <div class="form__group">
+        <div class="form__item">
+          <label for="name">Nome: </label>
+          <input
+            type="text"
+            placeholder="Digite o nome"
+            name="name"
+            [(ngModel)]="payload.name"
+          />
+        </div>
+        <div class="form__item">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Digite o e-mail"
+            [(ngModel)]="payload.email"
+          />
+        </div>
+        <div class="form__item">
+          <label for="phoneNumber">Telefone:</label>
+          <input
+            type="text"
+            name="phoneNumber"
+            placeholder="Digite o telefone"
+            [(ngModel)]="payload.phoneNumber"
+          />
+        </div>
+      </div>
+
+      <mat-card-actions align="end">
+        <button mat-button (click)="handleCreateCustomer()">Registrar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>
